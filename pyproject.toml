@@ -2,7 +2,7 @@
 name = "infinitum tech"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["mahender.kurikyala11@gmail.com","lavudyasomani143@gmail.com"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
