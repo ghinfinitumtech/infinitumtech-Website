@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <title>{% block title %}Contact Us{% endblock %}</title>
+
+        <!-- PAGE TITLE
+        ================================================== -->
+        <section class="page-title-section bg-img cover-background mx-lg-1-6 mx-xl-2-5 mx-xxl-2-9 left-overlay-dark" data-overlay-dark="8" data-background="img/banner/page-title.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="position-relative">
+                            <h1>Contact Us</h1>
+                        </div>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#!">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="line-animated">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+
+        <!-- CONTACT INFO
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row mt-n1-9">
+                    <div class="col-md-6 col-xl-4 mt-1-9 wow fadeIn" data-wow-delay="200ms">
+                        <div class="card-style-02 h-100">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="card-icon">
+                                        <i class="ti-mobile text-primary display-20"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3 ms-lg-4">
+                                    <h3 class="h5">Phone Number</h3>
+                                    <p class="mb-0">+91 9030908181
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4 mt-1-9 wow fadeIn" data-wow-delay="400ms">
+                        <div class="card-style-02 h-100">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="card-icon">
+                                        <i class="ti-location-pin text-primary display-20"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3 ms-lg-4">
+                                    <h3 class="h5">Location</h3>
+                                    <p class="mb-0 w-lg-80">656, Ayyappa Society, Madhapur Hyderabad 500018.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4 mt-1-9 wow fadeIn" data-wow-delay="600ms">
+                        <div class="card-style-02 h-100">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="card-icon">
+                                        <i class="ti-email text-primary display-20"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3 ms-lg-4">
+                                    <h3 class="h5">Email Address</h3>
+                                    <p class="mb-0">infinitumtech@outlook.com</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM -->
+<section class="p-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 mb-1-6 mb-xl-0 wow fadeIn" data-wow-delay="200ms">
+                <div class="pe-xl-1-9">
+                    <div class="section-title left mb-1-9">
+                        <span class="sm-title">Contact Us</span>
+                        <h2 class="mb-0 h1 mt-2">Write Us Any Message</h2>
+                    </div>
+                    <p class="mb-1-9">These are the phrases we live by in everything we do. Each brand we build, and we create.</p>
+                    <ul class="social-icon-style3 ps-0">
+                        <li class="me-1"><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="me-1"><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                        <li class="me-1"><a href="#!"><i class="fab fa-instagram"></i></a></li>
+                        <li class="me-0"><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-7 wow fadeIn" data-wow-delay="400ms">
+                <form action="{% url 'contact' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <!-- Begin Text input element -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Your Name <span class="required">*</span></label>
+                                <div class="#">
+                                    <input class="form-control" id="name" type="text" name="name" placeholder="Your name here" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Text input element -->
+
+                        <!-- Begin Text input element -->
+                        <div class="col-md-6">
+                            <div class="#">
+                                <label for="email">Your Email <span class="required">*</span></label>
+                                <div class="#">
+                                    <input class="form-control" id="email" type="email" name="email" placeholder="Your email here" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Text input element -->
+
+                        <!-- Begin Text input element -->
+                        <div class="col-md-6">
+                            <div class="#">
+                                <label for="subject">Your Subject <span class="required">*</span></label>
+                                <div class="#">
+                                    <input class="form-control" id="subject" type="text" name="subject" placeholder="Your subject here" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Text input element -->
+
+                        <!-- Begin Text input element -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="phone">Contact Number</label>
+                                <div class="">
+                                    <input class="form-control" id="phone" type="number" name="phone" placeholder="Your phone here" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Text input element -->
+
+                        <!-- Begin Textarea element -->
+                        <div class="col-md-12">
+                            <div class="#">
+                                <label for="message">Message <span class="required">*</span></label>
+                                <div class="#">
+                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Tell us a few words"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Textarea element -->
+
+                        <!-- Begin Captcha element -->
+                        <!-- Add your captcha code here if needed -->
+                        <!-- End Captcha element -->
+
+                        <!-- Begin Submit button -->
+                        <div class="col-md-12">
+                            <div class="#">
+                                <button class="btn-style1 border-0" type="submit"><span>Submit</span></button>
+                            </div>
+                        </div>
+                        <!-- End Submit button -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- MAP
+        ================================================== -->
+        <section class="pb-0">
+            <div class="container-fuild">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1181.6691655633006!2d78.39391183984299!3d17.453295346205827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf2466faae76852f%3A0x2fd5ed605e3287eb!2sview%20monks!5e0!3m2!1sen!2sin!4v1710229458867!5m2!1sen!2sin" width="1200" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+       
+
+    </div>
+
+   
+    <!-- SCROLL TO TOP
+    ================================================== -->
+    <a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+
+    {% endblock %}
