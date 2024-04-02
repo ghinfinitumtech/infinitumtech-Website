@@ -1,0 +1,114 @@
+
+       
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+      <title>{% block title %}Service Detail{% endblock %}</title>
+       
+     <!-- PAGE TITLE
+        ================================================== -->
+        <section class="page-title-section bg-img cover-background mx-lg-1-6 mx-xl-2-5 mx-xxl-2-9 left-overlay-dark" data-overlay-dark="8" style="background-image: url('{{service_id.banner_image.url }}');">
+            <!-- <img src="{{ service_id.banner_image.url }}" alt=""> -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="position-relative">
+                            <h1>{{ service_id.name }}</h1>
+                        </div>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="#">{{ service_id.name }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="line-animated">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+        
+        
+
+       
+
+        <!-- INFORMATION SECURITY
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 order-2 order-xl-1">
+                       
+                        <div class="sidebar me-xxl-1-9">
+                          
+                            <div class="widget bg-secondary mb-1-9 wow fadeIn" data-wow-delay="200ms">
+                                
+                                <div class="widget-content">
+
+                                    <h5 class="mb-4 text-white">Main Services</h5>
+
+                                    <ul class="category-list list-unstyled mb-0">
+                                          {% for i in service %}
+                                          
+                                          {% if i.id == service_id.id %}
+                                          <li class="active"><a href="{% url 'service_detail' i.id %}"><span>{{i.name}}</span></a></li>
+                                          {% else %}
+
+                                          <li><a href="{% url 'service_detail' i.id %}"><span>{{i.name}}</span></a></li>
+                                          {% endif %}
+                                            
+                                          
+                                        
+                                        {% endfor %}
+                                </div>
+                            </div>
+                         
+
+                            
+                            <div class="widget bg-secondary wow fadeIn" data-wow-delay="600ms">
+                                <div class="widget-content">
+                                    <h5 class="mb-4 text-white">Follow Us</h5>
+                                    <ul class="social-icon-style1">
+                                        <li>
+                                            <a href="{{details.facebook}}"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="{{details.twitter}}"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="{{details.youtube}}"><i class="fab fa-youtube"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="{{details.linkedin}}"><i class="fab fa-linkedin-in"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 mb-2-9 mb-xl-0 order-1 order-xl-2">
+                        <div>
+                            <div class="mb-5 text-center wow fadeIn" data-wow-delay="200ms">
+                                <img src="{{service_id.image.url}}" width="800px" height="700px"   alt="...">
+                            </div>
+                            <div class="wow fadeIn" data-wow-delay="20ms">
+                                <h2 class="h4 mb-3">{{service_id.name}}</h2>
+                                <p class="mb-5">{{service_id.descriptions}}</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    </div>
+
+
+            
+    {% endblock %}
