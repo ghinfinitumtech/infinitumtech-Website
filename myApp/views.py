@@ -27,64 +27,33 @@ def service_detail(request, service_id):
     return render(request, 'myApp/service_detail.html',  locals())
 
 
-
 def careers_form(request):
     if request.method == 'POST':
         form = CareerApplicationForm(request.POST, request.FILES)
         if form.is_valid():
-            name = form.cleaned_data.get('name')
-            email = form.cleaned_data.get('email')
-            phone = form.cleaned_data.get('phone')
-            date = form.cleaned_data.get('date')
-            resume = request.FILES.get('resume')
-            gender = form.cleaned_data.get('gender', '') 
-            address = form.cleaned_data.get('address')
-
-            career_application = CareerApplication(
-                name=name, email=email, phone=phone,
-                date=date, address=address, resume=resume, gender=gender
-            )
-            
-            career_application.save()
-
-            message=messages.success(request, 'Your form has been submitted successfully.')
-            
+            form.save()
+            # Display success message
+            messages.success(request, 'Your form has been submitted successfully.')
             # Redirect to the success page or another view
-            return redirect('careers_form')  
-
+            return redirect('careers_form')  # Redirect to the same page (GET request)
     else:
+        # If it's a GET request or the form is not valid, render an empty form
         form = CareerApplicationForm()
-
     return render(request, 'myApp/careers_form.html', {'form': form})
-
-
-
 
 def contact(request):
     if request.method == 'POST':
-        form = Contact_Form(request.POST, request.FILES)
+        form = ContactForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data.get('name')
-            email = form.cleaned_data.get('email')
-            phone = form.cleaned_data.get('phone')
-            subject = form.cleaned_data.get('subject', '') 
-            message = form.cleaned_data.get('message')
-
-            print(name, email, phone, subject, message)
-
-            career_application = Contact(
-                name=name, email=email, phone=phone,
-                subject=subject, message=message
-            )
-
-            career_application.save()
-
+            form.save()
+            # Display success message
             messages.success(request, 'Your form has been submitted successfully.')
-
-            # Redirect to the success page or another view
-            return redirect('contact')
-
+            # Redirect to a success page or another view
+            return redirect('contact')  # Redirect to the same page (GET request)
+        else:
+            # If form is invalid, display error messages
+            messages.error(request, 'Please correct the errors below.')
     else:
-        form = Contact_Form()
+        form = ContactForm()
 
     return render(request, 'myApp/contact.html', {'form': form})
