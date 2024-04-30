@@ -24,49 +24,42 @@
                             {% endif %}
                             <form action="{% url 'careers_form' %}" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
-                                
-                                    <div class="row">
-                                    <!-- Begin Text input element -->
+                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="name">Your Name <span class="required">*</span></label>
-                                            <input class="form-control" id="name" type="text" name="name" placeholder="name" />
-
-                                            <label for="email">Your Email <span class="required">*</span></label>
-                                            <input class="form-control" id="email" type="email" name="email" placeholder="email" />
-                                               
-                                            <label for="gender">Gender <span class="required">*</span></label>
-                                            <select class="form-control" id="gender" name="gender">
-                                                <option value="male">Male</option>
-                                                <option value="female">Female</option>
-                                                <option value="other">Other</option>
-                                            </select>
-                                            
-
-                                            <label for="phone">Contact Number</label>
-                                            <input class="form-control" id="phone" type="text" name="phone" placeholder="Phone no" />
-
-                                            <label for="address">Address</label>
-                                            <input class="form-control" id="address" type="text" name="address" placeholder="Address" />
-
-                                            <label for="date">Date</label>
-                                            <input class="form-control" id="date" type="date" name="date" placeholder="Date" value="{{ form.date | date:'Y-m-d' }}" />
-
-                                            
-                                            <label for="resume">Resume <span class="required">*</span></label>
-                                            <input class="form-control" id="resume" type="file" name="resume" placeholder="Resume" />
-
+                                            {{ form.name.label_tag }}
+                                            {{ form.name }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form.email.label_tag }}
+                                            {{ form.email }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form.gender.label_tag }}
+                                            {{ form.gender }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form.phone.label_tag }}  <span> +91987654321 format</span>
+                                            {{ form.phone }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form.address.label_tag }}
+                                            {{ form.address }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form.date.label_tag }}
+                                            {{ form.date }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form.resume.label_tag }}
+                                            {{ form.resume }}
                                         </div>
                                     </div>
-                                    <!-- End Text input element -->
-
-                                    <!-- Begin Submit button -->
+                                </div>
+                                <div class="row">
                                     <div class="col-md-12">
-                                        <div class="">
-                                            <button class="btn-style1 border-0" type="submit"><span>Submit</span></button>
-                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
-                                    <!-- End Submit button -->
                                 </div>
                             </form>
                         </div>
