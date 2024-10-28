@@ -11,6 +11,25 @@
     width: 100%;
     height: 100%
 }
+.company-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.company-links li {
+    margin-bottom: 10px;
+}
+
+.company-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.company-links li a:hover {
+    text-decoration: underline;
+    color: #ccc;
+}
 
 #preloader:before {
     content: "";
