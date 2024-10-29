@@ -59,7 +59,7 @@
                 <!-- start top search -->
                 <div class="top-search bg-primary">
                     <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9" >
-                        <form class="search-form" action="https://solutichtml.websitelayout.net/search.html" method="GET" accept-charset="utf-8">
+                        <form class="search-form" action="" method="GET" accept-charset="utf-8">
                             <div class="input-group">
                                 <span class="input-group-addon cursor-pointer">
                                     <button class="search-form_submit fas fa-search text-white" type="submit"></button>
@@ -221,36 +221,13 @@
                     </div>
                     <div class="col-md-6 col-lg-3 mt-5 offset-lg-1 wow fadeIn" data-wow-delay="600ms">
                         <div class="ps-xl-4">
-                            <h3 class="text-white h5 mb-1-9">Newsletter</h3>
-                            <p class="text-white opacity8 mb-3">Subscribe to our newsletter to receive updates on the latest news!</p>
-                            <form class="quform newsletter-form" action="https://solutichtml.websitelayout.net/quform/newsletter-two.php" method="post" enctype="multipart/form-data" onclick="">
-
-                                <div class="quform-elements">
-                                    <div class="row">
-
-                                        <!-- Begin Text input element -->
-                                        <div class="col-md-12">
-                                            <div class="quform-element mb-0">
-                                                <div class="quform-input">
-                                                    <input class="form-control" id="email_address" type="text" name="email_address" placeholder="Subscribe with us">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Text input element -->
-
-                                        <!-- Begin Submit button -->
-                                        <div class="col-md-12">
-                                            <div class="quform-submit-inner">
-                                                <button class="btn btn-white text-white m-0" type="submit"><i class="fas fa-paper-plane"></i></button>
-                                            </div>
-                                            <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
-                                        </div>
-                                        <!-- End Submit button -->
-                                    </div>
-
-                                </div>
-
-                            </form>
+                            <h3 class="text-white h5 mb-1-9">Connect us</h3>
+                            <p class="text-white opacity8 mb-3">Follow us on our LinkedIn</p>
+                            <div class="connect-button">
+                                <a href="{{details.linkedin}}" target="_blank" class="btn btn-white text-white m-0">
+                                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -308,7 +285,7 @@
 
     <!-- form scripts js -->
     <script src="{% static  'quform/js/scripts.js' %}"></script>
-
+    {% block extra_js %}{% endblock %}
     <!-- all js include end -->
 </body>
 </html>

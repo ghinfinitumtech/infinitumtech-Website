@@ -47,21 +47,37 @@ def careers_form(request):
 
 
 def contact(request):
+    # Dictionary of country codes and their corresponding countries
+    country_codes = {
+        "+91": "India",
+        "+1": "USA",
+        "+44": "UK",
+        "+61": "Australia",
+        "+81": "Japan",
+        "+49": "Germany",
+        "+33": "France",
+        "+86": "China",
+        "+55": "Brazil",
+        "+7": "Russia",
+        "+39": "Italy",
+        "+34": "Spain",
+        # Add more countries as needed
+    }
+
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            # Display success message
             messages.success(request, "Your form has been submitted successfully.")
-            # Redirect to a success page or another view
-            return redirect("contact")  # Redirect to the same page (GET request)
+            return redirect("contact")
         else:
-            # If form is invalid, display error messages
             messages.error(request, "Please correct the errors below.")
     else:
         form = ContactForm()
 
-    return render(request, "myApp/contact.html", {"form": form})
+    return render(
+        request, "myApp/contact.html", {"form": form, "country_codes": country_codes}
+    )
 
 
 def refund_policy(request):

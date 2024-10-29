@@ -12,7 +12,7 @@
                     <div class="col-md-9 col-lg-7 col-xl-8 col-xxl-6 text-center py-5">
                         <div class="banner-content text-center">
                             <h1 class="text-white font-weight-800 display-4 display-xl-3 mb-2-9">{{i.name}}</h1>
-                            <a href="about.html" class="btn-style1 animated fadeInUp"><span class="animated fadeInUp">More info</span></a>
+                            <a href="{% url 'about' %}" class="btn-style1 animated fadeInUp"><span class="animated fadeInUp">More info</span></a>
                         </div>
                     </div>
                 </div>
@@ -251,7 +251,7 @@
                                 </div>
                             </div>
                             <div class="pt-3">
-                                <h3 class="h5 mb-0"><a href="team-details.html">{{i.name}}</a></h3>
+                                <h3 class="h5 mb-0">{{i.name}}</h3>
                                 <p class="mb-0 small">{{i.designation}}</p>
                             </div>
                         </div>

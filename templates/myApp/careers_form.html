@@ -25,7 +25,7 @@
                             <form action="{% url 'careers_form' %}" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             {{ form.name.label_tag }}
                                             {{ form.name }}
@@ -39,7 +39,7 @@
                                             {{ form.gender }}
                                         </div>
                                         <div class="form-group">
-                                            {{ form.phone.label_tag }}  <span> +91987654321 format</span>
+                                            {{ form.phone.label_tag }}
                                             {{ form.phone }}
                                         </div>
                                         <div class="form-group">
