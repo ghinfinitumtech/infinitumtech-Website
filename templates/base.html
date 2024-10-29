@@ -86,7 +86,7 @@
                                           
                                     </div>
 
-                                    <div class="navbar-toggler bg-primary"></div>
+                                    <button class="navbar-toggler bg-primary"  onclick="toggleNav()"></button>
 
                                     <!-- start menu area -->
                                     <ul class="navbar-nav ms-auto" id="nav" style="display: none; color:black;">
@@ -286,6 +286,16 @@
     <!-- form scripts js -->
     <script src="{% static  'quform/js/scripts.js' %}"></script>
     {% block extra_js %}{% endblock %}
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('nav');
+            if (nav.style.display === 'none' || nav.style.display === '') {
+                nav.style.display = 'block';
+            } else {
+                nav.style.display = 'none';
+            }
+        }
+        </script>
     <!-- all js include end -->
 </body>
 </html>
