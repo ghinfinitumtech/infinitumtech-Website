@@ -21,7 +21,6 @@ ALLOWED_HOSTS = [
     "http://13.233.101.213/",
     "https://13.233.101.213/",
     "13.233.101.213",
-    "127.0.0.1",
 ]
 
 
@@ -139,11 +138,12 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
 # custom static fils
-STATIC_URL = "/static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-
+STATIC_URL = "/static/"  # This is usually already defined.
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # Adjust as needed.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 # media fils
 
 MEDIA_URL = "/media/"
