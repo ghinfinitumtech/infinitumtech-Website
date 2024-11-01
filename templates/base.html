@@ -3,40 +3,51 @@
 <!-- Add your CSS styles or link to external stylesheets here -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- metas -->
-    <meta charset="utf-8">
-    <meta name="author" content="Website Design Templates">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="keywords" content="IT Solutions and Services HTML Template">
-    <meta name="description" content="Solutic - IT Solutions and Services HTML Template">
-
-    <!-- title  -->
-    <title>{% block title %}{% endblock %}</title>
-    <!-- favicon -->
-    <link rel="shortcut icon" href="{% static  'img/logos/favicon.png' %}">
-    <link rel="apple-touch-icon" href="{% static  'img/logos/apple-touch-icon-57x57.png' %}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{% static  'img/logos/apple-touch-icon-72x72.png' %}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{% static  'img/logos/apple-touch-icon-114x114.png' %}">
-
-    <!-- plugins -->
-    <link rel="stylesheet" href="{% static  'css/plugins.css' %}">
-
-    <!-- search css -->
-    <link rel="stylesheet" href="{% static  'search/search.css' %}">
-
-    <!-- quform css -->
-    <link rel="stylesheet" href="{% static  'quform/css/base.css' %}">
-
-    <!-- theme core css -->
-    <link href="{% static  'css/styles.css' %}" rel="stylesheet">
-    <link href="{% static  'css/refund.css' %}" rel="stylesheet">
-    <link href="{% static  'css/terms.css' %}" rel="stylesheet">
-    <link href="{% static  'css/privacy.css' %}" rel="stylesheet">
-
-</head>
-
+    <head>
+        <!-- Basic metas -->
+        <meta charset="utf-8">
+        <meta name="author" content="Infinitum Tech">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="keywords" content="InfinitumTech.net, infinitumtech hyderabad, Infinitum Tech, infinitumtech.net hyderabad, IT Solutions, Software Solutions, IT Consulting">
+        <meta name="description" content="Infinitum Tech - Providing leading IT solutions and services for businesses in Hyderabad and beyond. Discover innovative solutions for your IT needs.">
+        
+        <!-- Title -->
+        <title>{% block title %}Infinitum Tech{% endblock %}</title>
+    
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'img/logos/favicon.png' %}">
+        <link rel="apple-touch-icon" href="{% static 'img/logos/apple-touch-icon-57x57.png' %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/logos/apple-touch-icon-72x72.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/logos/apple-touch-icon-114x114.png' %}">
+        <link rel="icon" href="{% static 'img/infinitumtech_logo-.ico' %}" type="image/x-icon">
+    
+        <!-- Open Graph (OG) tags for social media previews -->
+        <meta property="og:title" content="Infinitum Tech | IT Solutions and Services">
+        <meta property="og:description" content="Infinitum Tech offers leading IT solutions and services tailored to your business needs.">
+        <meta property="og:image" content="{% static 'img/logos/og-image.png' %}">
+        <meta property="og:url" content="https://infinitumtech.net">
+        <meta property="og:type" content="website">
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://infinitumtech.net">
+    
+        <!-- plugins -->
+        <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+        <link rel="icon" href="{% static 'img/infinitumtech_logo-.ico' %}" type="image/x-icon">
+    
+        <!-- search css -->
+        <link rel="stylesheet" href="{% static 'search/search.css' %}">
+    
+        <!-- quform css -->
+        <link rel="stylesheet" href="{% static 'quform/css/base.css' %}">
+    
+        <!-- theme core css -->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'css/refund.css' %}" rel="stylesheet">
+        <link href="{% static 'css/terms.css' %}" rel="stylesheet">
+        <link href="{% static 'css/privacy.css' %}" rel="stylesheet">
+    </head>    
 <body>
     <header>
         <!-- Your header content goes here -->
