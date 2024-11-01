@@ -16,11 +16,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "infinitumtech.net",
+    "www.infinitumtech.net",
+    ".infinitumtech.net",  # Allows all subdomains
+    "13.233.101.213",
+    "https://13.233.101.213",
+    "http://13.233.101.213",
     "https://infinitumtech.net",
     "http://infinitumtech.net",
-    "http://13.233.101.213/",
-    "https://13.233.101.213/",
-    "13.233.101.213",
+    "https://www.infinitumtech.net",
+    "http://www.infinitumtech.net",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://infinitumtech.net",
+    "https://www.infinitumtech.net",
+    "http://infinitumtech.net",
+    "http://www.infinitumtech.net",
 ]
 
 
