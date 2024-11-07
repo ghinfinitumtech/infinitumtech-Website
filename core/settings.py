@@ -25,6 +25,7 @@ ALLOWED_HOSTS = [
     "http://infinitumtech.net",
     "https://www.infinitumtech.net",
     "http://www.infinitumtech.net",
+    "127.0.0.1",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
