@@ -17,7 +17,8 @@ def home(request):
     banner = Banner.objects.all()
     testiomial = Testimonials.objects.all()
     team_mb = TeamMembers.objects.all()
-    # details=CompanyDetails.objects.get(pk=1)
+    projects_c = Project.objects.all()
+    details = CompanyDetails.objects.get(pk=1)
     return render(request, "myApp/home.html", locals())
 
 
@@ -27,7 +28,7 @@ def About(request):
 
 def service_detail(request, service_id):
     service_id = get_object_or_404(Services, pk=service_id)
-    # details=CompanyDetails.objects.get(pk=1)
+    details = CompanyDetails.objects.get(pk=1)
     return render(request, "myApp/service_detail.html", locals())
 
 

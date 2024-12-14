@@ -19,8 +19,6 @@
             </div>
         </section>
 {% endfor %}
-        
-
     
         <section class="card-style09 py-0 overflow-visible bg-transparent">
             <div class="container">
@@ -48,7 +46,37 @@
             </div>
         </section>
         
-
+        <section class="projects-container">
+            <h1 class="projects-title">Our Projects</h1>
+            <div class="projects-grid">
+                {% for project in projects_c %}
+                    <div class="project-card">
+                        {% if project.image %}
+                            <img src="{{ project.image.url }}" class="project-image" alt="{{ project.name }}">
+                        {% else %}
+                            <img src="https://img.freepik.com/free-vector/red-grunge-style-coming-soon-design_1017-26691.jpg?t=st=1734176122~exp=1734179722~hmac=d565c1f5b6d2fae88ea4bd7b1661d83152c449f7870292a13435d41c6108352b&w=996" class="project-image" alt="Coming Soon">
+                        {% endif %}
+                        <div class="project-body">
+                            <h3 class="project-name">{{ project.name }}</h3>
+                            <div class="project-links">
+                                {% if project.link %}
+                                    <a href="{{ project.link }}" target="_blank" class="project-button">
+                                        <i class="fas fa-external-link-alt"></i> <!-- External Link Icon -->
+                                    </a>
+                                {% endif %}
+                                {% if project.git_hub %}
+                                    <a href="{{ project.git_hub }}" target="_blank" class="project-button">
+                                        <i class="fab fa-github"></i> <!-- GitHub Icon -->
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+        
          <!--===========================================ABOUT ============================== -->
         
         <section class="overflow-visible">
