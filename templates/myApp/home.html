@@ -63,6 +63,19 @@
                         </a>
                         <div class="project-body">
                             <h3 class="project-name">{{ project.name }}</h3>
+                            <p class="project-description">
+                                {% if project.live %}
+                                    {% if project.description %}
+                                        <p class="project-description">{{ project.description }}</p>
+                                    {% else %}
+                                        <p class="project-description">{{ project.link|default:"Coming soon..." }}</p> 
+                                    {% endif %}
+                                {% else %}
+                                <span class="coming-soon-message">🚀 Our project is almost ready! Please stay tuned, we’ll be live very soon!</span>
+                                {% endif %}
+                            </p>
+                            
+                           
                             <div class="project-links">
                                 {% if project.link %}
                                     <a href="{{ project.link }}" target="_blank" class="project-button">
@@ -104,7 +117,7 @@
                     </div>
                 {% endfor %}
             </div>
-        </section>
+        </section>        
                 
          <!--===========================================ABOUT ============================== -->
         
