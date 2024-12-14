@@ -47,15 +47,20 @@
         </section>
         
         <section class="projects-container">
-            <h1 class="projects-title">Our Projects</h1>
+            <div class="section-title mb-1-9 mb-md-6 text-center wow fadeIn" data-wow-delay="200ms">
+                <span class="sm-title">Our Vision in Action</span>
+                <h2 class="mb-0 h1">Explore Our Latest Projects and Innovations</h2>
+            </div>            
             <div class="projects-grid">
                 {% for project in projects_c %}
                     <div class="project-card">
-                        {% if project.image %}
-                            <img src="{{ project.image.url }}" class="project-image" alt="{{ project.name }}">
-                        {% else %}
-                            <img src="https://img.freepik.com/free-vector/red-grunge-style-coming-soon-design_1017-26691.jpg?t=st=1734176122~exp=1734179722~hmac=d565c1f5b6d2fae88ea4bd7b1661d83152c449f7870292a13435d41c6108352b&w=996" class="project-image" alt="Coming Soon">
-                        {% endif %}
+                        <a href="{{ project.link }}" target="_blank">
+                            {% if project.image %}
+                                <img src="{{ project.image.url }}" class="project-image" alt="{{ project.name }}">
+                            {% else %}
+                                <img src="https://img.freepik.com/free-vector/red-grunge-style-coming-soon-design_1017-26691.jpg?t=st=1734176122~exp=1734179722~hmac=d565c1f5b6d2fae88ea4bd7b1661d83152c449f7870292a13435d41c6108352b&w=996" class="project-image" alt="Coming Soon">
+                            {% endif %}
+                        </a>
                         <div class="project-body">
                             <h3 class="project-name">{{ project.name }}</h3>
                             <div class="project-links">
@@ -69,14 +74,38 @@
                                         <i class="fab fa-github"></i> <!-- GitHub Icon -->
                                     </a>
                                 {% endif %}
+                                {% if project.facebook %}
+                                    <a href="{{ project.facebook }}" target="_blank" class="project-button">
+                                        <i class="fab fa-facebook"></i> <!-- Facebook Icon -->
+                                    </a>
+                                {% endif %}
+                                {% if project.twitter %}
+                                    <a href="{{ project.twitter }}" target="_blank" class="project-button">
+                                        <i class="fab fa-twitter"></i> <!-- Twitter Icon -->
+                                    </a>
+                                {% endif %}
+                                {% if project.youtube %}
+                                    <a href="{{ project.youtube }}" target="_blank" class="project-button">
+                                        <i class="fab fa-youtube"></i> <!-- YouTube Icon -->
+                                    </a>
+                                {% endif %}
+                                {% if project.whatsapp %}
+                                    <a href="{{ project.whatsapp }}" target="_blank" class="project-button">
+                                        <i class="fab fa-whatsapp"></i> <!-- WhatsApp Icon -->
+                                    </a>
+                                {% endif %}
+                                {% if project.linkedin %}
+                                    <a href="{{ project.linkedin }}" target="_blank" class="project-button">
+                                        <i class="fab fa-linkedin"></i> <!-- LinkedIn Icon -->
+                                    </a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                 {% endfor %}
             </div>
         </section>
-        
-        
+                
          <!--===========================================ABOUT ============================== -->
         
         <section class="overflow-visible">
